@@ -1,0 +1,84 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Draw Doodles</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    </head>
+    <body>
+        <!-- <div class = "banner"> -->
+            <div class = "wave"></div>
+        <!-- </div> -->
+        <div class="container">   
+            <div class="left_panel">
+                <div class="tools">
+                    <select id = "current_tool">
+                        <option value = "brush" id = "brush">Brush</option>
+                        <option value = "eraser" id = "brush">Eraser</option>
+                    </select>
+                    <input type = "range" min = "3" max = "75" value = "20" id = "brush_size"/>
+                    <div class = "btns">
+                        <button id = "undoBtn"><img src = "{{ url_for('static', filename='images/undo.png') }}"></button>
+                        <button id = "redoBtn"><img src = "{{ url_for('static', filename='images/redo.png') }}"></button>
+                    </div>                   
+                </div>
+                <div class="shades" id = "brush_color">
+                    <label class = "radio">
+                        <!-- <div class = "radio"> -->
+                            <input type = "radio" name = "color" value = "sky">Sky
+                        <!-- </div> -->
+                    </label>
+                    <label class = "radio">
+                        <!-- <div class = "radio"> -->
+                            <input type = "radio" name = "color" value = "clouds">Clouds
+                        <!-- </div> -->
+                    </label>
+                    <label class = "radio">
+                        <!-- <div class = "radio"> -->
+                            <input type = "radio" name = "color" value = "grass">Land
+                        <!-- </div> -->
+                    </label>
+                    <label class = "radio">
+                        <!-- <div class = "radio"> -->
+                            <input type = "radio" name = "color" value = "trees">Trees
+                        <!-- </div> -->
+                    </label>
+                    <label class = "radio">
+                        <!-- <div class = "radio"> -->
+                            <input type = "radio" name = "color" value = "river">River
+                        <!-- </div> -->
+                    </label>
+                    <label class = "radio">
+                        <!-- <div class = "radio"> -->
+                            <input type = "radio" name = "color" value = "ocean">Ocean
+                        <!-- </div> -->
+                    </label>
+                    <label class = "radio">
+                        <!-- <div class = "radio"> -->
+                            <input type = "radio" name = "color" value = "mountain">Mountain
+                        <!-- </div> -->
+                    </label>
+                    <label class = "radio">
+                        <!-- <div class = "radio"> -->
+                            <input type = "radio" name = "color" value = "rocks">Rocks
+                        <!-- </div> -->
+                    </label>
+                    <label class = "radio">
+                        <!-- <div class = "radio"> -->
+                            <input type = "radio" name = "color" value = "sand">Sand
+                        <!-- </div> -->
+                    </label>
+                </div>
+            </div>
+            <div class = "canvas_area">
+                <div class = "input_canvas">
+                    <canvas id = "drawing_area"></canvas>
+                </div>
+                <div class = "generated_image">
+                    <img id = "output_image">
+                </div>
+            </div>
+        </div>
+        <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    </body>
+</html>
